@@ -1,0 +1,28 @@
+cat > blocked_sites.txt <<EOF
+icloud.com
+youtube.com
+facebook.com
+twitter.com
+cloudfront.net
+rfa.org
+minghui.org
+epochtimes.com
+bdstatic.com
+wikipedia.org
+wikileaks.org
+pornhub.com
+twitch.tv
+dongtaiwang.com
+wujieliulan.com
+tiktokcdn.com
+tiktok.com
+x.com
+instagram.com
+telegram.org
+EOF
+
+
+#!/bin/bash
+for domain in $(cat blocked_sites.txt); do
+    iptables -A INPUT -m string --algo kmp --string $domain -j DROP
+done
