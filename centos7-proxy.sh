@@ -54,7 +54,7 @@ flow_limit=1000
 rate_limit=1000
 crypt=true
 compress=true
-disconnect_timeout=3
+disconnect_timeout=1
 EOF
 
 # 启动并设置服务开机自启
