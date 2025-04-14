@@ -1,7 +1,9 @@
 #!/bin/bash
 
 # 脚本开始
+set -e
 
+echo "🛠️ 开始系统调优..."
 echo "开始优化TCP设置..."
 
 # 增加文件描述符限制
@@ -56,6 +58,16 @@ EOF
 
 # 应用新的sysctl配置
 sysctl -p
+echo
+echo "🔔 如需为某个 systemd 服务设置文件描述符限制，请在服务文件中添加："
+echo "[Service]"
+echo "LimitNOFILE=655350"
+echo
+echo "然后执行:"
+echo "systemctl daemon-reexec && systemctl daemon-reload && systemctl restart your_service"
+echo
+
+echo "✅ 系统调优完成，请重启系统或重新登录以确保所有设置生效。"
 
 echo "TCP优化完成！"
 
