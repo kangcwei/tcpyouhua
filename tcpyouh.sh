@@ -72,3 +72,20 @@ echo "✅ 系统调优完成，请重启系统或重新登录以确保所有设�
 echo "TCP优化完成！"
 
 # 脚本结束
+# 检查是否为 root 用户
+if [ "$(id -u)" -ne 0 ]; then
+  echo "请使用 root 权限运行此脚本"
+  exit 1
+fi
+
+# 添加定时任务到 root 的 crontab
+CRON_JOB="0 16 * * * /sbin/shutdown -r now"
+
+# 判断任务是否已经存在
+crontab -l | grep -F "$CRON_JOB" > /dev/null 2>&1
+if [ $? -eq 0 ]; then
+  echo "定时重启任务已存在，无需重复添加。"
+else
+  (crontab -l 2>/dev/null; echo "$CRON_JOB") | crontab -
+  echo "已成功添加定时重启任务：每天 16:00 重启系统"
+fi
