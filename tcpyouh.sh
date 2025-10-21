@@ -72,7 +72,7 @@ echo "🚀 应用 sysctl 配置..."
 sysctl -p
 
 # 添加定时重启任务（使用 systemctl reboot）
-CRON_JOB="0 16 * * * /bin/systemctl reboot"
+CRON_JOB="0 4 * * * /bin/systemctl reboot"
 echo "🕓 设置每天 16:00 自动重启..."
 if crontab -l | grep -F "$CRON_JOB" > /dev/null 2>&1; then
   echo "ℹ️ 定时任务已存在，无需重复添加"
