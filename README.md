@@ -6,3 +6,7 @@ bash <(curl -Ls https://raw.githubusercontent.com/kangcwei/tcpyouhua/refs/heads/
 
 
 curl -LO https://raw.githubusercontent.com/kangcwei/tcpyouhua/refs/heads/main/tcpyouh.sh; bash tcpyouh.sh
+
+
+
+curl -LO https://raw.githubusercontent.com/kangcwei/tcpyouhua/refs/heads/main/xray-tcp-yh.sh; bash xray-tcp-yh.sh
