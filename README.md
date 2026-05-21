@@ -9,4 +9,4 @@ curl -LO https://raw.githubusercontent.com/kangcwei/tcpyouhua/refs/heads/main/tc
 
 
 
-curl -LO https://raw.githubusercontent.com/kangcwei/tcpyouhua/refs/heads/main/xray-tcp-yh.sh; bash xray-tcp-yh.sh
+curl -LO https://raw.githubusercontent.com/kangcwei/tcpyouhua/refs/heads/main/xray-tuning.sh; bash xray-tuning.sh
